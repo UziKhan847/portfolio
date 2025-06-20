@@ -8,7 +8,11 @@ module.exports = {
         'fhd': '1920px',
         'qhd': '2560px',
         'uhd': '3840px',
-        'mobile-tall': { raw: '(max-aspect-ratio: 1/1)' }
+        'mobile-tall': { raw: '(max-aspect-ratio: 1/1)' },
+        'aspect-4/3': { raw: '(aspect-ratio: 4/3)' },
+        'aspect-16/9': { raw: '(aspect-ratio: 16/9)' },
+        'macbook-16/10': { raw: '(aspect-ratio: 16/10)' },
+        'surface-3/2': { raw: '(aspect-ratio: 3/2)' },
       },
       fontSize: {
         '4x1': ['2.25rem', { lineHeight: '2.5rem' }],

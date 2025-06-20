@@ -1,5 +1,5 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
-import Mountain from '../../images/mountain_road_black.webp';
+import Mountain from '../../images/mount_intro.webp';
 import { useEffect, useRef, useState } from 'react';
 import WelcomeSnippet from './intro_elements/WelcomeSnippet';
 import AboutSnippet from './intro_elements/AboutSnippet';

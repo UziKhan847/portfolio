@@ -3,7 +3,7 @@ import { useRef } from "react";
 import SkillElement from "././skill_elements/SkillElement";
 import FrontEndImg from "../../images/frontend.webp";
 import BackEndImg from "../../images/backend.webp";
-import DesignImg from "../../images/design.avif"
+import DesignImg from "../../images/design.webp"
 import { FlutterLogo, ReactLogo, TailwindLogo, FirebaseLogo, SupabaseLogo, GitLogo, InkscapeLogo, CanvaLogo, FigmaLogo } from "../../assets";
 
 
