@@ -7,12 +7,13 @@ function WelcomeSnippet() {
   const String name   = 'Mohammad Uzair';
   const String title  = 'Front-End Engineer';
   const List<String> languages = [
-    'English',
-    'Arabic',
-    'Urdu'
+    'English - الإنجليزية',
+    'Arabic - العربية',
+    'Urdu - الأردية'
   ];
 
   // WELCOME TO MY PORTFOLIO!
+  // أهلا وسهلا ومرحبا
 }`;
 
     return (

@@ -2,13 +2,14 @@ import './App.css';
 import { useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Header from "./components/header/Header";
-import Contact from './components/contact/Contact';
+import Contact from './components/footer/Contact';
 import Experience from './components/experience/Experience';
-import Education from './components/education/Education';
 import Skills from './components/skills/Skills';
 import IntroImage from './components/intro/IntroImage';
 import Cave from '../src/images/cave.webp'
-import Closing from './components/closing/Closing';
+import Projects from './components/closing/projects/Projects';
+import Education from './components/closing/education/Education';
+import Footer from './components/footer/Footer';
 
 
 function useViewPortSize() {
@@ -39,8 +40,8 @@ function App() {
       <IntroImage vSize={vSize} />
       <Skills vSize={vSize} />
       <Experience vSize={vSize} />
-      <Closing vSize={vSize} />
-      <div className='relative h-screen w-screen bg-white'></div>
+      <Projects vSize={vSize} />
+      <Footer vSize={vSize} />
     </div>
   );
 }

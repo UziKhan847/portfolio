@@ -28,20 +28,20 @@ function Skills({ vSize }) {
     return (
         <div>
 
-            <div className='
+            <section className='
                 relative
                 flex items-center justify-center
                 h-fit w-screen p-10
                 bg-gray-950'>
                 <span className='text-white text-[10vw] mobile-tall:text-[14vw] font-oswald font-bold'>SKILLS</span>
-            </div>
-            <div ref={container} className="relative bg-gray-950 h-[300vh] w-screen">
+            </section>
+            <section ref={container} className="relative bg-gray-950 h-[300vh] w-screen">
                 {
                     placeholders.map((_, i) =>
                         <SkillElement key={`skill${i}`} vSize={vSize} image={imgs[i]} text={texts[i]} logos={arrayOfLogos[i]} />
                     )
                 }
-            </div>
+            </section>
         </div>
 
 

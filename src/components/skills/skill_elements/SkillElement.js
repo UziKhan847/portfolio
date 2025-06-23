@@ -56,13 +56,12 @@ function SkillElement({ vSize, image, logos, text }) {
                 </motion.div>
             </section>
 
-            <div className="
-                      absolute top-0 left-[2vw]
+            <section className="
+                      absolute top-0 left-[2vw] xl:left-[5vw] mobile-tall:left-[2.5vw] aspect-16/9:left-[5vw]
                       h-[100vh] w-fit p-[1vw]
                       flex items-center justify-center">
 
                 <motion.div
-
                     style={{ x }}
                     className="
                         flex flex-col
@@ -72,8 +71,7 @@ function SkillElement({ vSize, image, logos, text }) {
                         text.split(``).map((ltr, i) => <motion.span key={i} style={{}}>{ltr}</motion.span>)
                     }
                 </motion.div>
-
-            </div>
+            </section>
 
 
         </div>

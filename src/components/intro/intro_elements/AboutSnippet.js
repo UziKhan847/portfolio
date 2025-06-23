@@ -13,7 +13,7 @@ function AboutSnippet() {
                                       
 uzi@LMDE6:~$ echo Hi, I'm Mohammad Uzair...
 > 👋 Hi, I'm Mohammad Uzair
-> 💻 Front‑End Mobile Developer (Flutter / Dart)
+> 💻 Front-End Mobile Developer (Flutter / Dart)
 > 🎨 Graphics Designer (Inkscape)
 > 🗓️ 1+ years experience
 > 🚀 Passionate coder, honing my craft daily!

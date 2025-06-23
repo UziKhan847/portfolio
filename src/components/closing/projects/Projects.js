@@ -14,7 +14,7 @@ function Projects({ vSize }) {
 
 
     return (
-        <div ref={container} className='h-[400vh] w-[100vw] bg-gray-950 font-oswald'>
+        <div ref={container} className='relative h-[400vh] w-[100vw] bg-gray-950 font-oswald'>
             <div className='sticky top-0 h-screen w-screen'>
 
                 <div className='h-[3.5vw] mobile-tall:h-[5vw] w-screen' />
