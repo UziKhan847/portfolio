@@ -12,8 +12,8 @@ body,
 
 @font-face {
     font-family: 'Anton';
-    src: url('../public/fonts/Anton-Regular.woff2') format('woff2'),
-        url('../public/fonts/Anton-Regular.woff') format('woff');
+    src: url('../fonts/Anton-Regular.woff2') format('woff2'),
+        url('../fonts/Anton-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -21,7 +21,7 @@ body,
 
 @font-face {
     font-family: 'OswaldVariable';
-    src: url('../public/fonts/Oswald-VariableFont_wght.woff2') format('woff2');
+    src: url('../fonts/Oswald-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -29,7 +29,7 @@ body,
 
 @font-face {
     font-family: 'FiraCode';
-    src: url('../public/fonts/FiraCode-VariableFont_wght.woff2') format('woff2');
+    src: url('../fonts/FiraCode-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -37,7 +37,7 @@ body,
 
 @font-face {
     font-family: 'Inter';
-    src: url('../public/fonts/Inter/Inter-VariableFont_opsz\,wght.woff2') format('woff2');
+    src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -45,7 +45,7 @@ body,
 
 @font-face {
     font-family: 'Inter';
-    src: url('../public/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.woff2') format('woff2');
+    src: url('../fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
@@ -54,8 +54,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-Hairline.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-Hairline.woff') format('woff');
+    src: url('../fonts/Lato/Lato-Hairline.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-Hairline.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -63,8 +63,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-HairlineItalic.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-HairlineItalic.woff') format('woff');
+    src: url('../fonts/Lato/Lato-HairlineItalic.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-HairlineItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -72,8 +72,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-Light.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-Light.woff') format('woff');
+    src: url('../fonts/Lato/Lato-Light.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -81,8 +81,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-LightItalic.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-LightItalic.woff') format('woff');
+    src: url('../fonts/Lato/Lato-LightItalic.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
@@ -90,8 +90,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-Regular.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-Regular.woff') format('woff');
+    src: url('../fonts/Lato/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -99,8 +99,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-Italic.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-Italic.woff') format('woff');
+    src: url('../fonts/Lato/Lato-Italic.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-Italic.woff') format('woff');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -108,8 +108,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-Bold.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-Bold.woff') format('woff');
+    src: url('../fonts/Lato/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -117,8 +117,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-BoldItalic.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-BoldItalic.woff') format('woff');
+    src: url('../fonts/Lato/Lato-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-BoldItalic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -126,8 +126,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-Black.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-Black.woff') format('woff');
+    src: url('../fonts/Lato/Lato-Black.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -135,8 +135,8 @@ body,
 
 @font-face {
     font-family: 'Lato';
-    src: url('../public/fonts/Lato/Lato-BlackItalic.woff2') format('woff2'),
-        url('../public/fonts/Lato/Lato-BlackItalic.woff') format('woff');
+    src: url('../fonts/Lato/Lato-BlackItalic.woff2') format('woff2'),
+        url('../fonts/Lato/Lato-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -144,7 +144,7 @@ body,
 
 @font-face {
     font-family: 'NotoSans';
-    src: url('../public/fonts/NotoSans/NotoSans-VariableFont_wdth\,wght.woff2') format('woff2');
+    src: url('../fonts/NotoSans/NotoSans-VariableFont_wdth\,wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -152,7 +152,7 @@ body,
 
 @font-face {
     font-family: 'NotoSans';
-    src: url('../public/fonts/NotoSans/NotoSans-Italic-VariableFont_wdth\,wght.woff2') format('woff2');
+    src: url('../fonts/NotoSans/NotoSans-Italic-VariableFont_wdth\,wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;

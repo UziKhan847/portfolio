@@ -1,6 +1,6 @@
 import { motion, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import Subtitle from './Subtitle.js';
+import Subtitle from './Subtitle.jsx';
 
 function getScaledTextXTransform(textWidth, vw) {
     const textCenter = (vw - textWidth) / 2;

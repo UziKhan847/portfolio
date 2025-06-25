@@ -1,0 +1,83 @@
+import { motion, useTransform } from 'framer-motion';
+import DartPadEmbed from '../../../DartPartEmbed';
+import { useEffect, useRef, useState } from 'react';
+
+function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, children, className = '', image, gistId, imageList, id }) {
+
+    const position = useTransform(scrollYProgress, yTrans.progRange, yTrans.range)
+    const scale = useTransform(scrollYProgress, scaleTrans.progRange, scaleTrans.range)
+
+    const ref = useRef(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const onMouseDown = (e) => {
+        setIsDown(true);
+        setStartX(e.pageX - ref.current.offsetLeft);
+        setScrollLeft(ref.current.scrollLeft);
+    };
+
+    const onMouseLeave = () => setIsDown(false);
+    const onMouseUp = () => setIsDown(false);
+
+    const onMouseMove = (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - ref.current.offsetLeft;
+        const walk = (x - startX) * 1; // scroll-fastness multiplier
+        ref.current.scrollLeft = scrollLeft - walk;
+    };
+
+    return (
+        <motion.div
+            style={{
+                x: (vSize.w - cardWidth) / 2,
+                y: position,
+                scale,
+                transformOrigin: "top center",
+            }}
+            className={`
+            absolute
+            h-[75vh] w-[90vw]
+            rounded-2xl
+            ${className}
+            `}>
+            <img src={image} alt='card background' className='absolute h-full w-full object-cover rounded-2xl' />
+            <div
+                ref={ref}
+                onMouseDown={onMouseDown}
+                onMouseLeave={onMouseLeave}
+                onMouseUp={onMouseUp}
+                onMouseMove={onMouseMove}
+                className={`
+                absolute h-full w-full
+                flex items-center justify-center
+                bg-black/40
+                rounded-2xl
+                ${imageList ? `overflow-x-scroll` : ``}`
+                }>
+
+                <div className='absolute top-5 left-10 text-white text-[2vw]'>{children}</div>
+                {gistId && <DartPadEmbed gistId={gistId} />}
+
+                {
+                    imageList && <div
+                        className='absolute left-0 top-0 h-full w-fit pr-32 pl-32 flex items-center gap-72 drop-shadow-2xl'>
+                        {
+                            imageList.map((img, i) => {
+                                return <div key={`${id}_${i}`} className='w-[13vw] mobile-tall:w-[50vw] h-auto rounded-3xl overflow-hidden'>
+                                    <img src={img} alt={`invoice_page${i}`} key={`image_${i}`} className='bg-slate-500 text-[200px] w-full h-full' />
+                                </div>
+                            })
+                        }
+                    </div>
+                }
+
+
+            </div>
+        </motion.div>
+    );
+}
+
+export default Card;

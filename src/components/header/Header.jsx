@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Title from './header_elements/Title.js';
+import Title from './header_elements/Title.jsx';
 
 
 function getNavBarH(vSize) {

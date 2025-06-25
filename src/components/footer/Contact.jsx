@@ -62,6 +62,8 @@ function Contact({ scrollYProgress, vSize }) {
 
             <motion.a
                 href={resumePDF}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ opacity: downloadOpacity }}
                 whileHover={{ scale: 1.05 }}
                 className="absolute bottom-[5vh] inline-flex items-center px-6 py-4 border border-white rounded-lg text-[4vw] lg:text-[1.5vw] mobile-tall:text-[2.5vw] font-firaCode hover:bg-white hover:text-black transition">
