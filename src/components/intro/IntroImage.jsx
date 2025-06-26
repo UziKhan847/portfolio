@@ -7,29 +7,7 @@ import Panel from '../Panel';
 
 function IntroImage({ vSize }) {
 
-    const imgRef = useRef(null);
-    const [imgH, setImgH] = useState(0);
-
-    useEffect(
-        () => {
-            const observer = new ResizeObserver(
-                ([entry]) => {
-                    const { height } = entry.contentRect;
-                    setImgH(height);
-                }
-            );
-
-            if (imgRef.current) {
-                observer.observe(imgRef.current);
-            }
-
-            return () => {
-                observer.disconnect();
-            }
-
-        },
-        []
-    );
+    const ref = useRef(null);
 
     const { scrollY } = useScroll({ layoutEffect: false });
 
@@ -40,7 +18,6 @@ function IntroImage({ vSize }) {
         <div className='relative'>
 
             <motion.img
-                ref={imgRef}
                 src={Mountain}
                 alt='BigMountain'
                 style={{
@@ -57,6 +34,7 @@ function IntroImage({ vSize }) {
                 className='absolute inset-0 bg-transparent' >
 
                 <motion.div
+                    ref={ref}
                     className='
                         absolute
                         top-2/4
@@ -64,14 +42,15 @@ function IntroImage({ vSize }) {
                         transform
                         -translate-x-1/2
                         w-[80vw]
+                        p-52 mobile-tall:p-0 mobile-tall:pt-32 mobile-tall:pb-32
                         mobile-tall:w-[80vw]
                         grid grid-cols-1 mobile-tall:grid-cols-1 lg:grid-cols-2 gap-[10vw]
                         items-start justify-items-center'>
-                    <Panel header="Welcome">
+                    <Panel header="Welcome" ref={ref}>
                         <WelcomeSnippet />
                     </Panel>
 
-                    <Panel header="About">
+                    <Panel header="About" ref={ref}>
                         <AboutSnippet />
                     </Panel>
                 </motion.div>

@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 
-function Panel({ header, children, className = '' }) {
+function Panel({ header, children, className = '', ref }) {
     return (
         <motion.div
+            drag
+            dragMomentum={false}
+            dragConstraints={ref}
+            dragElastic={false}
             className={`border border-black rounded-md shadow-lg w-fit ${className}`}
         >
             <div className="relative p-2 bg-gray-800 flex items-center justify-end">

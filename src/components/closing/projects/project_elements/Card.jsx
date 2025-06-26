@@ -44,6 +44,7 @@ function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, ch
             ${className}
             `}>
             <img src={image} alt='card background' className='absolute h-full w-full object-cover rounded-2xl' />
+            <div className='absolute top-5 left-10 text-white text-[2vw] mobile-tall:text-[5vw] z-10'>{children}</div>
             <div
                 ref={ref}
                 onMouseDown={onMouseDown}
@@ -58,7 +59,7 @@ function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, ch
                 ${imageList ? `overflow-x-scroll` : ``}`
                 }>
 
-                <div className='absolute top-5 left-10 text-white text-[2vw]'>{children}</div>
+
                 {gistId && <DartPadEmbed gistId={gistId} />}
 
                 {
