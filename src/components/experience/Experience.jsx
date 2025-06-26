@@ -15,7 +15,7 @@ function Experience({ vSize }) {
                 backdropFilter: blur,
                 textShadow: '0 8px 8px rgba(0,0,0,0.9)'
             }}
-            className="relative w-full min-h-screen gap-32 mobile-tall:gap-40 flex flex-col items-center justify-center text-white text-center font-oswald"
+            className="relative w-full min-h-screen gap-32 mobile-tall:gap-[7vh] flex flex-col items-center justify-center text-white text-center font-oswald"
         >
 
             <motion.div style={{ opacity }} className='absolute h-screen w-screen bg-black' />
@@ -23,7 +23,7 @@ function Experience({ vSize }) {
             <h1 className='text-[10vw]  mobile-tall:text-[14vw] font-bold z-10'>
                 EXPERIENCE
             </h1>
-            <div className='w-[80vw] grid grid-cols-1 md:grid-cols-2 mobile-tall:grid-cols-1 gap-20 mobile-tall:gap-44 text-[5vw] lg:text-[2.5vw] mobile-tall:text-[6vw] font-firaCode z-10'>
+            <div className='w-[80vw] grid grid-cols-1 md:grid-cols-2 mobile-tall:grid-cols-1 gap-20 mobile-tall:gap-[5vh] text-[5vw] lg:text-[2.5vw] mobile-tall:text-[6vw] font-firaCode z-10'>
                 <div>
                     <p className='font-bold text-[0.8em] mobile-tall:text-[0.65em]'>
                         Mobile App Developer (FLUTTER) & Graphics Designer

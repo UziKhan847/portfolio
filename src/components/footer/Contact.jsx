@@ -1,4 +1,4 @@
-// src/components/Contact.jsx
+
 import React, { useMemo } from 'react';
 import { useTransform, motion } from 'framer-motion';
 import { Download } from 'lucide-react';
@@ -30,7 +30,7 @@ function Contact({ scrollYProgress, vSize }) {
                 className="absolute inset-0 h-screen w-screen object-cover" />
 
             <motion.div
-                style={{ opacity: textOpacity, textShadow: '0 8px 8px rgba(0,0,0,0.9)' }}
+                style={{ opacity: textOpacity, textShadow: '0 8px 8px rgba(0,0,0,0.9)', y: -50 }}
                 className="relative z-10 flex flex-col items-center space-y-8">
                 {lines.map((item, idx) => {
                     const isTitle = idx === 0;
@@ -50,7 +50,7 @@ function Contact({ scrollYProgress, vSize }) {
                                 `flex flex-wrap justify-center ` +
                                 (isTitle
                                     ? 'text-[10vw] mobile-tall:text-[14vw] font-bold z-10'
-                                    : 'text-[5vw] lg:text-[2.5vw] mobile-tall:text-[4vw] font-firaCode z-10')
+                                    : 'text-[5vw] lg:text-[2vw] mobile-tall:text-[4vw] font-firaCode z-10')
                             }>
                             {text.split('').map((letter, i) => (
                                 <Letter key={i} letter={letter} scrollYProgress={scrollYProgress} vSize={vSize} />
@@ -66,8 +66,8 @@ function Contact({ scrollYProgress, vSize }) {
                 rel="noopener noreferrer"
                 style={{ opacity: downloadOpacity }}
                 whileHover={{ scale: 1.05 }}
-                className="absolute bottom-[5vh] inline-flex items-center px-6 py-4 border border-white rounded-lg text-[4vw] lg:text-[1.5vw] mobile-tall:text-[2.5vw] font-firaCode hover:bg-white hover:text-black transition">
-                <Download className="w-12 h-12" />
+                className="absolute bottom-[5vh] inline-flex items-center px-6 py-4 border border-white rounded-lg text-[4vw] lg:text-[1.5vw] mobile-tall:text-[3vw] font-firaCode hover:bg-white hover:text-black transition">
+                <Download className="w-[2.5vw] mobile-tall:w-[6vw] h-auto" />
                 <span>&nbsp;Download Resume</span>
             </motion.a>
         </div>

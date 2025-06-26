@@ -39,7 +39,7 @@ function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, ch
             }}
             className={`
             absolute
-            h-[75vh] w-[90vw]
+            h-[70vh] w-[90vw]
             rounded-2xl
             ${className}
             `}>
@@ -64,10 +64,10 @@ function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, ch
 
                 {
                     imageList && <div
-                        className='absolute left-0 top-0 h-full w-fit pr-32 pl-32 flex items-center gap-72 drop-shadow-2xl'>
+                        className='absolute left-0 top-0 h-full w-fit pr-32 pl-32 flex items-center gap-[10vw] mobile-tall:gap-[15vw] drop-shadow-2xl'>
                         {
                             imageList.map((img, i) => {
-                                return <div key={`${id}_${i}`} className='w-[13vw] mobile-tall:w-[50vw] h-auto rounded-3xl overflow-hidden'>
+                                return <div key={`${id}_${i}`} className='w-[13vw] mobile-tall:w-[45vw] h-auto rounded-3xl overflow-hidden'>
                                     <img src={img} alt={`invoice_page${i}`} key={`image_${i}`} className='bg-slate-500 text-[200px] w-full h-full' />
                                 </div>
                             })

@@ -42,7 +42,7 @@ function Education({ vSize }) {
                 className="
                     absolute w-full h-[100vh]
                     flex flex-col items-center justify-center
-                    mobile-tall:gap-40 aspect-16/9:gap-20
+                    mobile-tall:gap-[5vh] aspect-16/9:gap-20
                     text-white text-center font-oswald">
 
 
@@ -57,15 +57,15 @@ function Education({ vSize }) {
                 <div
                     className="
                         w-[80vw]
-                        grid grid-cols-1 md:grid-cols-2 mobile-tall:grid-cols-1 mobile-tall:gap-48 aspect-16/9:grid-cols-2 aspect-16/9:grid-rows-2 aspect-16/9:gap-y-20
-                        text-[5vw] lg:text-[2.5vw] mobile-tall:text-[6vw] font-firaCode z-10">
+                        grid grid-cols-1 md:grid-cols-2 mobile-tall:grid-cols-1 mobile-tall:gap-[4vh] aspect-16/9:grid-cols-2 aspect-16/9:grid-rows-2 aspect-16/9:gap-y-20
+                        text-[5vw] lg:text-[2.5vw] mobile-tall:text-[5.5vw] font-firaCode z-10">
 
                     <CertificateSection
                         title="JS Algorithms & Data Structures"
                         date="FreeCodeCamp · May 13, 2024"
                         timeSpent="~300 hours"
                         project="Pokémon Finder (Pokédex)"
-                        certificateLink="/js.jpg"
+                        certificateLink="/portfolio/js.jpg"
                         linkText="View the Certificate Here"
                         certificateImg="/js.jpg"
                         linkColor="red"
@@ -76,9 +76,9 @@ function Education({ vSize }) {
                         date="FreeCodeCamp · June 11, 2024"
                         timeSpent="~300 hours"
                         project="Portfolio site (HTML/CSS)"
-                        certificateLink="/web.jpg"
+                        certificateLink="/portfolio/web.jpg"
                         linkText="View the Certificate Here"
-                        certificateImg="/web.jpg"
+                        certificateImg="/portfolio/web.jpg"
                         linkColor="blue"
                     />
 
@@ -87,9 +87,9 @@ function Education({ vSize }) {
                         date="King Saud Sunset · Jan 2023"
                         timeSpent="N/A"
                         project="Major: Quranic Studies"
-                        certificateLink="/BEd.jpg"
+                        certificateLink="/portfolio/BEd.jpg"
                         linkText="View the Degree Here"
-                        certificateImg="/BEd.jpg"
+                        certificateImg="/portfolio/BEd.jpg"
                         linkColor="green"
                     />
                 </div>

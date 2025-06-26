@@ -66,7 +66,7 @@ function SkillElement({ vSize, image, logos, text }) {
                     className="
                         flex flex-col
                       text-white font-firaCode
-                        text-[2vh] md:text-[4vh] xl:text-[5vh]">
+                        text-[2vh] md:text-[4vh] xl:text-[5vh] mobile-tall:text-[5vh]">
                     {
                         text.split(``).map((ltr, i) => <motion.span key={i} style={{}}>{ltr}</motion.span>)
                     }
