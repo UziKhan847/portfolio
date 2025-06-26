@@ -10,10 +10,10 @@ function Contact({ scrollYProgress, vSize }) {
     const lines = useMemo(() => [
         'CONTACT',
         'uzair.jamiah@proton.me',
-        '+1 (289) 300 1652',
+        '+1 (289) 300-1652',
         'Hamilton, Ontario',
         { text: 'github.com/UziKhan847', url: 'https://github.com/UziKhan847' },
-        'linkedin.com/in/xxxxxxx'
+        //'linkedin.com/in/xxxxxxx'
     ], []);
 
     const imageOpacity = useTransform(scrollYProgress, [1 / 3, 1], [0, 0.55]);
