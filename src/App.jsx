@@ -1,14 +1,11 @@
 import './App.css';
-import { useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Header from "./components/header/Header";
-import Contact from './components/footer/Contact';
 import Experience from './components/experience/Experience';
 import Skills from './components/skills/Skills';
-import IntroImage from './components/intro/IntroImage';
+import Intro from './components/intro/Intro';
 import Cave from '../src/images/cave.webp'
 import Projects from './components/closing/projects/Projects';
-import Education from './components/closing/education/Education';
 import Footer from './components/footer/Footer';
 
 
@@ -37,7 +34,7 @@ function App() {
         className='fixed inset-0 h-screen w-screen object-cover'
       ></img>
       <Header vSize={vSize} />
-      <IntroImage vSize={vSize} />
+      <Intro vSize={vSize} />
       <Skills vSize={vSize} />
       <Experience vSize={vSize} />
       <Projects vSize={vSize} />

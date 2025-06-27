@@ -14,6 +14,8 @@ function IntroImage({ vSize }) {
     const filter = useTransform(scrollY, [0, vSize.h], [`blur(10px)`, `blur(0px)`]);
     const opacity = useTransform(scrollY, [vSize.h, vSize.h * 1.3], [0, 1]);
 
+    const isPortrait = vSize.h > vSize.w;
+
     return (
         <div className='relative'>
 
@@ -47,11 +49,11 @@ function IntroImage({ vSize }) {
                         grid grid-cols-1 mobile-tall:grid-cols-1 lg:grid-cols-2 gap-[10vw]
                         items-start justify-items-center'>
                     <Panel header="Welcome" ref={ref}>
-                        <WelcomeSnippet />
+                        <WelcomeSnippet isPortrait={isPortrait} />
                     </Panel>
 
                     <Panel header="About" ref={ref}>
-                        <AboutSnippet />
+                        <AboutSnippet isPortrait={isPortrait}/>
                     </Panel>
                 </motion.div>
 

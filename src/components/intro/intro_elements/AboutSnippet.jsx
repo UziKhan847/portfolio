@@ -2,7 +2,7 @@ import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 
-function AboutSnippet() {
+function AboutSnippet({ isPortrait }) {
     const code = `uzi@LMDE6:~$ figlet -f big ABOUT
           ____   ____  _    _ _______ 
     /\   |  _ \ / __ \| |  | |__   __|
@@ -23,17 +23,18 @@ uzi@LMDE6:~$ echo Hi, I'm Mohammad Uzair...
         <div className="w-fit overflow-hidden rounded-none shadow-none">
             <SyntaxHighlighter
                 language="bash"
-
                 style={{}}
-                wrapLongLines
+                wrapLongLines={false}
                 customStyle={{
                     backgroundColor: '#000',
                     color: '#0f0',
                     fontFamily: 'Consolas, "Courier New", monospace',
-                    padding: '1rem',
+                    padding: isPortrait ? '1vh' : '1vw',
                     border: '1px solid #333',
                     borderRadius: '0',
-
+                    lineHeight: '1',
+                    letterSpacing: 'normal',
+                    whiteSpace: 'pre'
                 }}
                 codeTagProps={{
                     style: {
