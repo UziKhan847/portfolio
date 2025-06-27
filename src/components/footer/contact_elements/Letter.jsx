@@ -8,9 +8,9 @@ function Letter({ letter, scrollYProgress, vSize }) {
         offsetY: Math.random() * vSize.h - vSize.h / 2
     }), [vSize.h, vSize.w]);
 
-    const x = useTransform(scrollYProgress, [0, 1], [offsetX, 0]);
-    const y = useTransform(scrollYProgress, [0, 1], [offsetY, 0]);
-    const opacity = useTransform(scrollYProgress, [0.3, 0.6, 1], [0, 0.5, 1]);
+    const x = useTransform(scrollYProgress, [0, 0.8], [offsetX, 0]);
+    const y = useTransform(scrollYProgress, [0, 0.8], [offsetY, 0]);
+    const opacity = useTransform(scrollYProgress, [0.3, 0.6, 0.8], [0, 0.5, 1]);
 
     return (
         <motion.span
