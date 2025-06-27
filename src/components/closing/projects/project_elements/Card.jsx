@@ -35,6 +35,7 @@ function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, ch
                 x: (vSize.w - cardWidth) / 2,
                 y: position,
                 scale,
+                willChange: 'scale',
                 transformOrigin: "top center",
             }}
             className={`

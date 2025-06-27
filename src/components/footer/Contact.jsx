@@ -16,21 +16,22 @@ function Contact({ scrollYProgress, vSize }) {
         //'linkedin.com/in/xxxxxxx'
     ], []);
 
-    const imageOpacity = useTransform(scrollYProgress, [1 / 3, 1], [0, 0.55]);
+    const imageOpacity = useTransform(scrollYProgress, [1 / 3, 1], [1, 0.55]);
     const blur = useTransform(scrollYProgress, [1 / 3, 1], ['blur(50px)', 'blur(1px)']);
     const textOpacity = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
     const downloadOpacity = useTransform(scrollYProgress, [0.75, 0.85], [0, 1]);
 
     return (
         <div className="sticky top-0 h-screen w-screen bg-black flex flex-col items-center justify-center text-white font-oswald px-4 overflow-hidden">
-            <motion.img
-                style={{ opacity: imageOpacity, filter: blur }}
+            <img
                 src={Night}
                 alt="night"
                 className="absolute inset-0 h-screen w-screen object-cover" />
 
+            <motion.div style={{ opacity: imageOpacity, backdropFilter: blur, willChange: 'opacity, backdropFilter' }} className='bg-black h-screen w-screen absolute' />
+
             <motion.div
-                style={{ opacity: textOpacity, textShadow: '0 8px 8px rgba(0,0,0,0.9)', y: -50 }}
+                style={{ opacity: textOpacity, textShadow: '0 8px 8px rgba(0,0,0,0.9)', y: -50, willChange: 'opacity' }}
                 className="relative z-10 flex flex-col items-center space-y-8 mobile-tall:space-y-[2.5vh]">
                 {lines.map((item, idx) => {
                     const isTitle = idx === 0;
@@ -64,7 +65,7 @@ function Contact({ scrollYProgress, vSize }) {
                 href={resumePDF}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ opacity: downloadOpacity }}
+                style={{ opacity: downloadOpacity, willChange: 'opacity, scale' }}
                 whileHover={{ scale: 1.05 }}
                 className="absolute bottom-[5vh] inline-flex items-center px-6 py-4 mobile-tall:px-[2vh] mobile-tall:py-[2vh] border border-white rounded-lg text-[4vw] lg:text-[1.5vw] mobile-tall:text-[3vw] font-firaCode hover:bg-white hover:text-black transition">
                 <Download className="w-[2.5vw] mobile-tall:w-[6vw] h-auto" />

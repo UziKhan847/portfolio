@@ -9,15 +9,17 @@ function LogoDrag({
 
     return (
         <motion.div
-            drag
-            dragConstraints={ref}
-            whileTap={{ cursor: 'grabbing' }}
-            whileDrag={{ scale: 1.2 }}
+            // drag
+            // dragConstraints={ref}
+            // whileTap={{ cursor: 'grabbing' }}
+            // whileDrag={{ scale: 1.2 }}
+            whileHover={{ scale: 1.2 }}
             className='
             transform'
             style={{
                 filter: 'drop-shadow(2px 4px 12px rgba(0,0,0,1))',
-                cursor: 'grab'
+                cursor: 'grab',
+                willChange: 'scale'
             }}
         >
             <LogoComponent

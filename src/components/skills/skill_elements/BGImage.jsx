@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 function BGImage({ src, vSize, scrollYProgress }) {

@@ -43,7 +43,7 @@ function Title({ vSize, scrollY, navBarHeight }) {
         <>
             <motion.h1
                 ref={textRef}
-                style={{ scale, y, x }}
+                style={{ scale, y, x, willChange: 'scale' }}
                 className="absolute
                 text-[5vw] mobile-tall:text-[7vw]
                 font-oswald font-semibold"

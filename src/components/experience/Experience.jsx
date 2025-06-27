@@ -18,7 +18,7 @@ function Experience({ vSize }) {
             className="relative w-full min-h-screen gap-32 mobile-tall:gap-[7vh] flex flex-col items-center justify-center text-white text-center font-oswald"
         >
 
-            <motion.div style={{ opacity }} className='absolute h-screen w-screen bg-black' />
+            <motion.div style={{ opacity, willChange: 'opacity' }} className='absolute h-screen w-screen bg-black' />
 
             <h1 className='text-[10vw]  mobile-tall:text-[14vw] font-bold z-10'>
                 EXPERIENCE

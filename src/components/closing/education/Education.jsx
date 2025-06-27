@@ -37,7 +37,8 @@ function Education({ vSize }) {
                 ref={container}
                 style={{
                     backdropFilter: blur,
-                    textShadow: '0 8px 8px rgba(0,0,0,0.9)'
+                    textShadow: '0 8px 8px rgba(0,0,0,0.9)',
+                    willChange: 'backdropFilter'
                 }}
                 className="
                     absolute w-full h-[100vh]
@@ -47,7 +48,7 @@ function Education({ vSize }) {
 
 
                 <motion.div
-                    style={{ opacity }}
+                    style={{ opacity, willChange: 'opacity' }}
                     className="absolute inset-0 bg-black" />
 
 

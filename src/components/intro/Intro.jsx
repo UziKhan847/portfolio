@@ -9,7 +9,7 @@ function IntroImage({ vSize }) {
 
     const ref = useRef(null);
 
-    const { scrollY } = useScroll({ layoutEffect: false });
+    const { scrollY } = useScroll();
 
     const filter = useTransform(scrollY, [0, vSize.h], [`blur(10px)`, `blur(0px)`]);
     const opacity = useTransform(scrollY, [vSize.h, vSize.h * 1.3], [0, 1]);
@@ -32,7 +32,7 @@ function IntroImage({ vSize }) {
             />
 
             <motion.div
-                style={{ opacity }}
+                style={{ opacity, willChange: 'opacity' }}
                 className='absolute inset-0 bg-transparent' >
 
                 <motion.div
@@ -53,7 +53,7 @@ function IntroImage({ vSize }) {
                     </Panel>
 
                     <Panel header="About" ref={ref}>
-                        <AboutSnippet isPortrait={isPortrait}/>
+                        <AboutSnippet isPortrait={isPortrait} />
                     </Panel>
                 </motion.div>
 

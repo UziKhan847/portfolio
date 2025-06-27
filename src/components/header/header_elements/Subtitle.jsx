@@ -84,7 +84,7 @@ function Subtitle({ vSize, scrollY, titleSize, navBarHeight }) {
 
             <motion.h1
                 ref={textRef}
-                style={{ scale, y, x }}
+                style={{ scale, y, x, willChange: 'scale' }}
                 className='
                 absolute
                 text-[3vw] mobile-tall:text-[4.5vw]
