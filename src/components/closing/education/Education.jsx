@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import Sunset from '../../../images/sunset_hill.webp';
 import CertificateSection from './CertificateSection';
 
-function Education({ vSize }) {
+function Education() {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,

@@ -1,8 +1,8 @@
 import { motion, useTransform } from 'framer-motion';
 import DartPadEmbed from '../../../DartPadEmbed';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
-function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, children, className = '', image, gistId, imageList, id }) {
+function Card({ scrollYProgress, yTrans, scaleTrans, children, className = '', image, gistId, imageList, id }) {
 
     const position = useTransform(scrollYProgress, yTrans.progRange, yTrans.range)
     const scale = useTransform(scrollYProgress, scaleTrans.progRange, scaleTrans.range)
@@ -32,14 +32,13 @@ function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, ch
     return (
         <motion.div
             style={{
-                x: (vSize.w - cardWidth) / 2,
                 y: position,
                 scale,
                 willChange: 'scale',
                 transformOrigin: "top center",
             }}
             className={`
-            absolute
+            absolute left-[5vw]
             h-[70vh] w-[90vw]
             rounded-2xl
             ${className}

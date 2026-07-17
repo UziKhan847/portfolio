@@ -1,15 +1,20 @@
 import { useTransform, motion } from "framer-motion";
-import { useMemo } from "react";
+import { useState } from "react";
+import { useViewport } from "../../../viewport";
 
+function Letter({ letter, scrollYProgress }) {
+    const vSize = useViewport();
 
-function Letter({ letter, scrollYProgress, vSize }) {
-    const { offsetX, offsetY } = useMemo(() => ({
-        offsetX: Math.random() * vSize.w - vSize.w / 2,
-        offsetY: Math.random() * vSize.h - vSize.h / 2
-    }), [vSize.h, vSize.w]);
+    // Lazy initialiser: pick a random scatter position once, on mount, instead
+    // of calling Math.random() during every render (which is impure and would
+    // recompute unpredictably).
+    const [offset] = useState(() => ({
+        x: Math.random() * vSize.w - vSize.w / 2,
+        y: Math.random() * vSize.h - vSize.h / 2,
+    }));
 
-    const x = useTransform(scrollYProgress, [0, 0.8], [offsetX, 0]);
-    const y = useTransform(scrollYProgress, [0, 0.8], [offsetY, 0]);
+    const x = useTransform(scrollYProgress, [0, 0.8], [offset.x, 0]);
+    const y = useTransform(scrollYProgress, [0, 0.8], [offset.y, 0]);
     const opacity = useTransform(scrollYProgress, [0.3, 0.6, 0.8], [0, 0.5, 1]);
 
     return (

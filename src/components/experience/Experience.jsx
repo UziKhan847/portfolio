@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-function Experience({ vSize }) {
+function Experience() {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({ target: container, offset: ['center end', 'center start'] });
     const scrollRange = [0, 0.45, 0.55, 1];

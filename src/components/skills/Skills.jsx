@@ -1,4 +1,3 @@
-import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import SkillElement from "././skill_elements/SkillElement";
 import FrontEndImg from "../../images/frontend.webp";
@@ -7,10 +6,9 @@ import DesignImg from "../../images/design.webp"
 import { FlutterLogo, ReactLogo, TailwindLogo, FirebaseLogo, SupabaseLogo, GitLogo, InkscapeLogo, CanvaLogo, FigmaLogo } from "../../assets";
 
 
-function Skills({ vSize }) {
+function Skills() {
 
     const container = useRef(null);
-    const { scrollY } = useScroll();
 
     const arrayOfLogos = [
         [FlutterLogo, ReactLogo, TailwindLogo],
@@ -38,7 +36,7 @@ function Skills({ vSize }) {
             <section ref={container} className="relative bg-gray-950 h-[300vh] w-screen">
                 {
                     placeholders.map((_, i) =>
-                        <SkillElement key={`skill${i}`} vSize={vSize} image={imgs[i]} text={texts[i]} logos={arrayOfLogos[i]} />
+                        <SkillElement key={`skill${i}`} image={imgs[i]} text={texts[i]} logos={arrayOfLogos[i]} />
                     )
                 }
             </section>

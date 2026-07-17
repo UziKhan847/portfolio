@@ -1,15 +1,15 @@
 
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useScroll, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import Card from './project_elements/Card';
 import SandImg from '../../../images/cards/sand.webp'
 import MosqueImg from '../../../images/cards/mosque.webp'
 import InvoiceImg from '../../../images/cards/invoice.webp'
+import { useViewport } from '../../../viewport';
 
-function Projects({ vSize }) {
+function Projects() {
+    const vSize = useViewport();
     const container = useRef(null);
-    const cardWidth = vSize.w * 0.9;
-    const cardHeight = vSize.h * 0.75;
 
     const invoiceImgs = import.meta.glob('../../../images/invoice_imgs/invoice_*.webp', { eager: true });
 
@@ -67,12 +67,9 @@ function Projects({ vSize }) {
                             <Card
                                 key={card.cardId}
                                 id={card.childId}
-                                index={i}
                                 image={card.image}
                                 imageList={card.imageList}
                                 gistId={card.gistId}
-                                vSize={vSize}
-                                cardWidth={cardWidth}
                                 scrollYProgress={smoothProg}
                                 yTrans={
                                     {

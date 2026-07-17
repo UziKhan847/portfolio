@@ -1,5 +1,6 @@
 import { motion, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { useViewport } from '../../../viewport';
 
 function getScaledTextXTransform(textWidth, vw) {
     const textCenter = (vw - textWidth) / 2;
@@ -19,12 +20,13 @@ function centerText(navBarHeight, textHeight) {
 
 }
 
-function Subtitle({ vSize, scrollY, titleSize, navBarHeight }) {
+function Subtitle({ scrollY, titleSize, navBarHeight }) {
+    const vSize = useViewport();
     const scaledPadding = vSize.w * 0.01;
     const textRef = useRef(null);
     const [textSize, setTextSize] = useState({ width: 0, height: 0 });
     const lineRef = useRef(null);
-    const lineH = lineRef.current?.offsetHeight || 0;
+    const [lineH, setLineH] = useState(0);
 
     useEffect(
         () => {
@@ -41,6 +43,15 @@ function Subtitle({ vSize, scrollY, titleSize, navBarHeight }) {
 
         }, []
     );
+
+    useEffect(() => {
+        if (!lineRef.current) return;
+        const observer = new ResizeObserver(([entry]) => {
+            setLineH(entry.contentRect.height);
+        });
+        observer.observe(lineRef.current);
+        return () => observer.disconnect();
+    }, []);
 
     const scale = useTransform(scrollY, [300, vSize.h], [1, 0.5]);
     const y = useTransform(scrollY, [300, vSize.h], [(vSize.h - textSize.height) / 2 + titleSize.height, (-textSize.height * (1 - 0.5) / 2) + centerText(navBarHeight, textSize.height)]);

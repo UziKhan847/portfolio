@@ -10,6 +10,19 @@ body,
     background-color: #000;
 }
 
+/* Code-snippet padding: viewport-width based in landscape, viewport-height
+   based in portrait/square. Replaces the old JS `isPortrait` prop so the
+   snippets no longer re-render on resize. */
+:root {
+    --snippet-pad: 1vw;
+}
+
+@media (max-aspect-ratio: 1 / 1) {
+    :root {
+        --snippet-pad: 1vh;
+    }
+}
+
 @font-face {
     font-family: 'Anton';
     src: url('/portfolio/fonts/Anton-Regular.woff2') format('woff2'),

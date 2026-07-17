@@ -6,7 +6,7 @@ import Night from '../../images/night.webp';
 import Letter from './contact_elements/Letter';
 import resumePDF from '../../assets/Resume.pdf';
 
-function Contact({ scrollYProgress, vSize }) {
+function Contact({ scrollYProgress }) {
     const lines = useMemo(() => [
         'CONTACT',
         'uzair.jamiah@proton.me',
@@ -54,7 +54,7 @@ function Contact({ scrollYProgress, vSize }) {
                                     : 'text-[5vw] lg:text-[2.2vw] mobile-tall:text-[5vw] font-firaCode z-10 mobile-tall:leading-none')
                             }>
                             {text.split('').map((letter, i) => (
-                                <Letter key={i} letter={letter} scrollYProgress={scrollYProgress} vSize={vSize} />
+                                <Letter key={i} letter={letter} scrollYProgress={scrollYProgress} />
                             ))}
                         </Wrapper>
                     );

@@ -2,7 +2,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import LogoDrag from "../../logo/LogoDrag";
 
-function SkillElement({ vSize, image, logos, text }) {
+function SkillElement({ image, logos, text }) {
 
     const placeholders = [...Array(3)];
 
@@ -50,7 +50,7 @@ function SkillElement({ vSize, image, logos, text }) {
                     }}
                 >
                     {
-                        placeholders.map((_, i) => <LogoDrag key={`logo${i}`} LogoComponent={logos[i]} ref={clipRef} ></LogoDrag>
+                        placeholders.map((_, i) => <LogoDrag key={`logo${i}`} LogoComponent={logos[i]} ></LogoDrag>
                         )
                     }
 

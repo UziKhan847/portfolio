@@ -1,7 +1,7 @@
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Title from './header_elements/Title.jsx';
-
+import { useViewport } from '../../viewport';
 
 function getNavBarH(vSize) {
     if (vSize.w / vSize.h < 1) {
@@ -10,7 +10,8 @@ function getNavBarH(vSize) {
     return vSize.w * 0.035;
 }
 
-function Header({ vSize }) {
+function Header() {
+    const vSize = useViewport();
     const scrollRef = useRef(null);
     const { scrollY } = useScroll();
 
@@ -18,8 +19,6 @@ function Header({ vSize }) {
         stiffness: 200,
         damping: 30,
     });
-
-    // const height = useTransform(scrollY, [0, vSize.h], [vSize.h, getNavBarH(vSize)]);
 
     const rawHeight = useTransform(
         scrollY,
@@ -36,8 +35,7 @@ function Header({ vSize }) {
         <div>
             <motion.div ref={scrollRef} style={{ height, willChange: 'height' }} className="fixed w-screen bg-white/60 backdrop-blur-md z-50 shadow-md">
 
-                <Title vSize={vSize} scrollY={smoothScrollY} navBarHeight={getNavBarH(vSize)} />
-
+                <Title scrollY={smoothScrollY} navBarHeight={getNavBarH(vSize)} />
 
             </motion.div>
 

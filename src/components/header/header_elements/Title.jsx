@@ -1,6 +1,7 @@
 import { motion, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Subtitle from './Subtitle.jsx';
+import { useViewport } from '../../../viewport';
 
 function getScaledTextXTransform(textWidth, vw) {
     const textCenter = (vw - textWidth) / 2;
@@ -13,7 +14,8 @@ function centerText(navBarHeight, textHeight) {
     return (navBarHeight - textHeight / 2) / 2;
 
 }
-function Title({ vSize, scrollY, navBarHeight }) {
+function Title({ scrollY, navBarHeight }) {
+    const vSize = useViewport();
     const scaledPadding = vSize.w * 0.01;
     const textRef = useRef(null);
     const [textSize, setTextSize] = useState({ width: 0, height: 0 })
@@ -50,7 +52,7 @@ function Title({ vSize, scrollY, navBarHeight }) {
             >
                 Mohammad Uzair Saleem
             </motion.h1>
-            <Subtitle vSize={vSize} scrollY={scrollY} titleSize={textSize} navBarHeight={navBarHeight} />
+            <Subtitle scrollY={scrollY} titleSize={textSize} navBarHeight={navBarHeight} />
         </>
     );
 }

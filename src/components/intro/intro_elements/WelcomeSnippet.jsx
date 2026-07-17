@@ -1,8 +1,14 @@
 import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+// PrismLight only bundles the languages you explicitly register, instead of
+// all ~200 that the default `Prism` build pulls in. This is the single biggest
+// reason the production bundle was oversized.
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import dart from 'react-syntax-highlighter/dist/esm/languages/prism/dart';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-function WelcomeSnippet({ isPortrait }) {
+SyntaxHighlighter.registerLanguage('dart', dart);
+
+function WelcomeSnippet() {
     const code = `void welcome() {
   const String name   = 'Mohammad Uzair';
   const String title  = 'Front-End Engineer';
@@ -25,7 +31,7 @@ function WelcomeSnippet({ isPortrait }) {
                 wrapLongLines
                 customStyle={{
                     margin: 0,
-                    padding: isPortrait ? '1vh' : '1vw',
+                    padding: 'var(--snippet-pad)',
                     lineHeight: '1',
                     letterSpacing: 'normal',
                     whiteSpace: 'pre'

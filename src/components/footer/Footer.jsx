@@ -3,8 +3,8 @@ import Education from "../closing/education/Education";
 import Contact from "./Contact";
 import { useScroll, useSpring } from "framer-motion";
 
-function Footer({ vSize }) {
-    const container = useRef();
+function Footer() {
+    const container = useRef(null);
 
     const { scrollYProgress } = useScroll({ target: container, offset: ['start start', 'end end'] });
 
@@ -15,8 +15,8 @@ function Footer({ vSize }) {
 
     return (
         <div ref={container} className='relative bg-gray-900 h-[300vh] w-screen'>
-            <Education vSize={vSize} />
-            <Contact scrollYProgress={smoothProg} vSize={vSize} />
+            <Education />
+            <Contact scrollYProgress={smoothProg} />
         </div>
 
     )
