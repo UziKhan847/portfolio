@@ -1,5 +1,5 @@
 import { motion, useTransform } from 'framer-motion';
-import DartPadEmbed from '../../../DartPartEmbed';
+import DartPadEmbed from '../../../DartPadEmbed';
 import { useEffect, useRef, useState } from 'react';
 
 function Card({ vSize, index, cardWidth, scrollYProgress, yTrans, scaleTrans, children, className = '', image, gistId, imageList, id }) {

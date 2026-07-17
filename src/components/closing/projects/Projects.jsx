@@ -1,5 +1,5 @@
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Card from './project_elements/Card';
 import SandImg from '../../../images/cards/sand.webp'
@@ -34,14 +34,14 @@ function Projects({ vSize }) {
             imageList: invoiceImgList,
         },
         {
-            name: <a href='' target='_blank' rel='noopener noreferrer'>FALLING SAND</a>,
+            name: <span>FALLING SAND</span>,
             cardId: 'fallingSandCard',
             childId: 'fallingSandImgId',
             image: SandImg,
             gistId: null //'b4221d131616e78cf64711380ac15005',
         },
         {
-            name: <a href='' target='_blank' rel='noopener noreferrer'>OTHER</a>,
+            name: <span>OTHER</span>,
             cardId: 'otherAppCard',
             childId: 'otherAppImgId',
             color: '#0000FF',
@@ -51,6 +51,7 @@ function Projects({ vSize }) {
 
     const { scrollYProgress } = useScroll({ target: container, offset: ['start start', 'end start'] });
 
+    const smoothProg = useSpring(scrollYProgress, { stiffness: 1000, damping: 200 });
 
     return (
         <div ref={container} className='relative h-[400vh] w-[100vw] bg-gray-950 font-oswald'>
@@ -72,7 +73,7 @@ function Projects({ vSize }) {
                                 gistId={card.gistId}
                                 vSize={vSize}
                                 cardWidth={cardWidth}
-                                scrollYProgress={scrollYProgress}
+                                scrollYProgress={smoothProg}
                                 yTrans={
                                     {
                                         progRange: [(1 / 5) * i, 1 / 5 * (i + 1)],

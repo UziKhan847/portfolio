@@ -68,7 +68,6 @@ function Education({ vSize }) {
                         project="Pokémon Finder (Pokédex)"
                         certificateLink="/portfolio/js.jpg"
                         linkText="View the Certificate Here"
-                        certificateImg="/js.jpg"
                         linkColor="red"
                     />
 
@@ -79,7 +78,6 @@ function Education({ vSize }) {
                         project="Portfolio site (HTML/CSS)"
                         certificateLink="/portfolio/web.jpg"
                         linkText="View the Certificate Here"
-                        certificateImg="/portfolio/web.jpg"
                         linkColor="blue"
                     />
 
@@ -90,7 +88,6 @@ function Education({ vSize }) {
                         project="Major: Quranic Studies"
                         certificateLink="/portfolio/BEd.jpg"
                         linkText="View the Degree Here"
-                        certificateImg="/portfolio/BEd.jpg"
                         linkColor="green"
                     />
                 </div>

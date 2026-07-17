@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Cave from '../../images/cave.webp';
 
 function Experience({ vSize }) {
     const container = useRef(null);

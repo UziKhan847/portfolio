@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import LogoDrag from "../../logo/LogoDrag";
 
@@ -15,11 +15,12 @@ function SkillElement({ vSize, image, logos, text }) {
         offset: ['start end', 'end start'],
     });
 
+    const smoothProg = useSpring(scrollYProgress, { stiffness: 1000, damping: 200 });
 
-    const y = useTransform(scrollYProgress, [0, 1], [-250, 250]);
+    const y = useTransform(smoothProg, [0, 1], [-150, 150]);
     //const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 1]);
 
-    const x = useTransform(scrollYProgress, [0, 0.45, 0.65, 1], [-500, 0, 0, -500]);
+    const x = useTransform(smoothProg, [0, 0.45, 0.65, 1], [-500, 0, 0, -500]);
 
     return (
         <div
@@ -30,13 +31,12 @@ function SkillElement({ vSize, image, logos, text }) {
             <motion.img
 
                 style={{
-                    //willChange: 'opacity',
+                    willChange: 'transform',
                     y,
-                    //opacity,
                 }}
                 src={image}
                 alt="skillimage"
-                className="w-screen h-screen object-cover block"
+                className="w-screen h-screen object-cover block backface-visibility-hidden"
             />
 
 

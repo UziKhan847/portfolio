@@ -42,21 +42,6 @@ function Subtitle({ vSize, scrollY, titleSize, navBarHeight }) {
         }, []
     );
 
-    const [wScrollY, setWScrollY] = useState(window.scrollY);
-    useEffect(
-        () => {
-            const handleScroll = () => {
-                setWScrollY(window.scrollY);
-            };
-
-            window.addEventListener('scroll', handleScroll);
-
-            return () => window.removeEventListener('scroll', handleScroll);
-        }, [wScrollY]
-    );
-
-
-
     const scale = useTransform(scrollY, [300, vSize.h], [1, 0.5]);
     const y = useTransform(scrollY, [300, vSize.h], [(vSize.h - textSize.height) / 2 + titleSize.height, (-textSize.height * (1 - 0.5) / 2) + centerText(navBarHeight, textSize.height)]);
     const x = useTransform(
