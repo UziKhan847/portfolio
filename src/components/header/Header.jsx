@@ -2,6 +2,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Title from './header_elements/Title.jsx';
 import { useViewport } from '../../viewport';
+import { getShrinkStart } from './headerScroll';
 
 function getNavBarH(vSize) {
     if (vSize.w / vSize.h < 1) {
@@ -22,7 +23,7 @@ function Header() {
 
     const rawHeight = useTransform(
         scrollY,
-        [0, vSize.h],
+        [getShrinkStart(vSize.h), vSize.h],
         [vSize.h, getNavBarH(vSize)]
     );
 

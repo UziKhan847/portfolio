@@ -2,6 +2,7 @@ import { motion, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Subtitle from './Subtitle.jsx';
 import { useViewport } from '../../../viewport';
+import { getLayoutEnd, getShrinkStart } from '../headerScroll';
 
 function getScaledTextXTransform(textWidth, vw) {
     const textCenter = (vw - textWidth) / 2;
@@ -17,6 +18,8 @@ function centerText(navBarHeight, textHeight) {
 function Title({ scrollY, navBarHeight }) {
     const vSize = useViewport();
     const scaledPadding = vSize.w * 0.01;
+    const shrinkStart = getShrinkStart(vSize.h);
+    const layoutEnd = getLayoutEnd(vSize.h);
     const textRef = useRef(null);
     const [textSize, setTextSize] = useState({ width: 0, height: 0 })
 
@@ -33,11 +36,11 @@ function Title({ scrollY, navBarHeight }) {
         return () => observer.disconnect();
     }, []);
 
-    const scale = useTransform(scrollY, [300, vSize.h], [1, 0.4]);
-    const y = useTransform(scrollY, [300, vSize.h], [(vSize.h - textSize.height) / 2 - 10, (-textSize.height * (1 - 0.5) / 2) + centerText(navBarHeight, textSize.height)]);
+    const scale = useTransform(scrollY, [shrinkStart, layoutEnd], [1, 0.4]);
+    const y = useTransform(scrollY, [shrinkStart, vSize.h], [(vSize.h - textSize.height) / 2 - 10, (-textSize.height * (1 - 0.5) / 2) + centerText(navBarHeight, textSize.height)]);
     const x = useTransform(
         scrollY,
-        [300, vSize.h],
+        [shrinkStart, layoutEnd],
         [(vSize.w - textSize.width) / 2, getScaledTextXTransform(textSize.width, vSize.w) + scaledPadding]
     );
 
@@ -45,7 +48,7 @@ function Title({ scrollY, navBarHeight }) {
         <>
             <motion.h1
                 ref={textRef}
-                style={{ scale, y, x, willChange: 'scale' }}
+                style={{ scale, y, x, willChange: 'transform' }}
                 className="absolute
                 text-[5vw] mobile-tall:text-[7vw]
                 font-oswald font-semibold"

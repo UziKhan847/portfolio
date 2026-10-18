@@ -1,5 +1,6 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Mountain from '../../images/mount_intro.webp';
+import MountainBlur from '../../images/blur/mount_intro_blur.webp';
 import { useRef } from 'react';
 import WelcomeSnippet from './intro_elements/WelcomeSnippet';
 import AboutSnippet from './intro_elements/AboutSnippet';
@@ -13,23 +14,28 @@ function IntroImage() {
 
     const { scrollY } = useScroll();
 
-    const filter = useTransform(scrollY, [0, vSize.h], [`blur(10px)`, `blur(0px)`]);
+    // Fading out a pre-blurred copy is compositor-only, unlike animating
+    // `filter: blur()` on a 200vh image, which re-rasterises it every frame.
+    const blurOpacity = useTransform(scrollY, [0, vSize.h], [1, 0]);
     const opacity = useTransform(scrollY, [vSize.h, vSize.h * 1.3], [0, 1]);
 
     return (
         <div className='relative'>
 
-            <motion.img
-                src={Mountain}
-                alt='BigMountain'
-                style={{
-                    filter,
-                }}
-                className='
-                sticky top-0
-                w-screen h-[200vh]
-                object-cover'
-            />
+            <div className='sticky top-0 w-screen h-[200vh]'>
+                <img
+                    src={Mountain}
+                    alt=''
+                    fetchPriority='high'
+                    className='absolute inset-0 h-full w-full object-cover'
+                />
+                <motion.img
+                    src={MountainBlur}
+                    alt=''
+                    style={{ opacity: blurOpacity, willChange: 'opacity' }}
+                    className='absolute inset-0 h-full w-full object-cover'
+                />
+            </div>
 
             <motion.div
                 style={{ opacity, willChange: 'opacity' }}

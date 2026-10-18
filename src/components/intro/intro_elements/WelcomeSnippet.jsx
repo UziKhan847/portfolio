@@ -11,7 +11,7 @@ SyntaxHighlighter.registerLanguage('dart', dart);
 function WelcomeSnippet() {
     const code = `void welcome() {
   const String name   = 'Mohammad Uzair';
-  const String title  = 'Front-End Engineer';
+  const String title  = 'Full-Stack Developer';
   const List<String> languages = [
     'English - الإنجليزية',
     'Arabic - العربية',

@@ -22,12 +22,8 @@ module.exports = {
         '11x1': ['10rem', { lineHeight: '1' }],
       },
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
         oswald: ['OswaldVariable', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        lato: ['Lato', 'sans-serif'],
         firaCode: ['FiraCode', 'sans-serif'],
-        notoSans: ['NotoSans', 'sans-serif']
       },
       backgroundImage: {
         'gradient-black': 'linear-gradient(270deg, #191919, #252525)',

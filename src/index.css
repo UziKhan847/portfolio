@@ -10,6 +10,14 @@ body,
     background-color: #000;
 }
 
+/* Many sections are `w-screen` (100vw), which includes the vertical
+   scrollbar's width on desktop and would otherwise create a horizontal
+   scrollbar. `clip` (unlike `hidden`) doesn't create a scroll container, so
+   `position: sticky` keeps working. */
+#root {
+    overflow-x: clip;
+}
+
 /* Code-snippet padding: viewport-width based in landscape, viewport-height
    based in portrait/square. Replaces the old JS `isPortrait` prop so the
    snippets no longer re-render on resize. */
@@ -21,15 +29,6 @@ body,
     :root {
         --snippet-pad: 1vh;
     }
-}
-
-@font-face {
-    font-family: 'Anton';
-    src: url('/portfolio/fonts/Anton-Regular.woff2') format('woff2'),
-        url('/portfolio/fonts/Anton-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -45,128 +44,5 @@ body,
     src: url('/portfolio/fonts/FiraCode-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/portfolio/fonts/Inter/Inter-VariableFont_opsz\,wght.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/portfolio/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: italic;
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-Hairline.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-Hairline.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-HairlineItalic.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-HairlineItalic.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-Light.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-LightItalic.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-Regular.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-Italic.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-Italic.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-Bold.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-BoldItalic.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-BoldItalic.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-Black.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/portfolio/fonts/Lato/Lato-BlackItalic.woff2') format('woff2'),
-        url('/portfolio/fonts/Lato/Lato-BlackItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NotoSans';
-    src: url('/portfolio/fonts/NotoSans/NotoSans-VariableFont_wdth\,wght.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NotoSans';
-    src: url('/portfolio/fonts/NotoSans/NotoSans-Italic-VariableFont_wdth\,wght.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: italic;
     font-display: swap;
 }

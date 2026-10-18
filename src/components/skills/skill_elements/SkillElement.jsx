@@ -2,13 +2,9 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import LogoDrag from "../../logo/LogoDrag";
 
-function SkillElement({ image, logos, text }) {
-
-    const placeholders = [...Array(3)];
+function SkillElement({ image, logos, title, tags }) {
 
     const container = useRef(null);
-    const clipRef = useRef(null);
-
 
     const { scrollYProgress } = useScroll({
         target: container,
@@ -18,7 +14,6 @@ function SkillElement({ image, logos, text }) {
     const smoothProg = useSpring(scrollYProgress, { stiffness: 1000, damping: 200 });
 
     const y = useTransform(smoothProg, [0, 1], [-150, 150]);
-    //const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 1]);
 
     const x = useTransform(smoothProg, [0, 0.45, 0.65, 1], [-500, 0, 0, -500]);
 
@@ -29,33 +24,40 @@ function SkillElement({ image, logos, text }) {
         >
 
             <motion.img
-
                 style={{
                     willChange: 'transform',
                     y,
                 }}
                 src={image}
-                alt="skillimage"
+                alt=""
+                loading="lazy"
+                decoding="async"
                 className="w-screen h-screen object-cover block backface-visibility-hidden"
             />
 
-
             <section className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                    ref={clipRef}
-                    className="relative w-[70vw] h-[70vh] bg-black/45 rounded-lg grid grid-cols-1 mobile-tall:grid-cols-1 md:grid-cols-3 items-center justify-items-center"
+                <div
+                    className="relative w-[70vw] h-[70vh] pb-[9vh] mobile-tall:pb-[22vh] bg-black/45 rounded-lg grid grid-cols-1 mobile-tall:grid-cols-1 md:grid-cols-3 items-center justify-items-center"
                     style={{
                         boxShadow: '0 0 0 2000px rgba(3,7,18,1)',
-
                     }}
                 >
-                    {
-                        placeholders.map((_, i) => <LogoDrag key={`logo${i}`} LogoComponent={logos[i]} ></LogoDrag>
-                        )
-                    }
+                    {logos.map(({ Logo, name }) => <LogoDrag key={name} LogoComponent={Logo} name={name} />)}
 
-
-                </motion.div>
+                    <ul
+                        aria-label={`${title.toLowerCase()} tech`}
+                        className="
+                            absolute bottom-0 inset-x-0
+                            flex flex-wrap justify-center gap-[1vh] px-[2vw] pb-[3vh]
+                            font-firaCode text-white
+                            text-[1.6vh] lg:text-[1vw] mobile-tall:text-[1.6vh]">
+                        {tags.map((tag) => (
+                            <li key={tag} className="px-[0.8em] py-[0.3em] rounded-full border border-white/40 bg-black/50 whitespace-nowrap">
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </section>
 
             <section className="
@@ -63,18 +65,18 @@ function SkillElement({ image, logos, text }) {
                       h-[100vh] w-fit p-[1vw]
                       flex items-center justify-center">
 
-                <motion.div
+                <motion.h3
                     style={{ x }}
+                    aria-label={title}
                     className="
                         flex flex-col
                       text-white font-firaCode
                         text-[2vh] md:text-[4vh] xl:text-[5vh] mobile-tall:text-[5vh]">
                     {
-                        text.split(``).map((ltr, i) => <motion.span key={i} style={{}}>{ltr}</motion.span>)
+                        title.split('').map((ltr, i) => <span key={i} aria-hidden="true">{ltr}</span>)
                     }
-                </motion.div>
+                </motion.h3>
             </section>
-
 
         </div>
     );
